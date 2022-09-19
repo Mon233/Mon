@@ -196,9 +196,12 @@ def submit():
 if __name__ == "__main__":
     window = Tk()
     window.title("Acron Enrollment Helper")
-    img = ImageTk.PhotoImage(Image.open("U-of-T-logo.png"))
-    logo = Label(window, image=img)
-    logo.pack()
+    try:
+        img = ImageTk.PhotoImage(Image.open("U-of-T-logo.png"))
+        logo = Label(window, image=img)
+        logo.pack()
+    except:
+        window.geometry('240x500')
 
     fields = {}
     fields['utorid_label'] = Label(window, text="Utorid:")
